@@ -1,10 +1,12 @@
 module Lib
   ( someFunc
   , watchAnd
+  , buildMap
   ) where
 
 import Control.Concurrent (threadDelay)
 import Control.Monad (forever)
+import Mapper
 import System.FSNotify
 
 someFunc :: IO ()

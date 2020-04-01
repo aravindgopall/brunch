@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: c398ba80f9f9be4ad19cd19f05f04ac829b7afb644970aea63b453d171d93f70
+-- hash: f0752b24716482885f2ea9c16bedbd881135483419ca7765d868464c12a364f9
 
 name:           butch
 version:        0.1.0.0
@@ -27,6 +27,7 @@ source-repository head
 
 library
   exposed-modules:
+      Extra
       Lib
       Mapper
   other-modules:
@@ -34,8 +35,11 @@ library
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      aeson
+    , base >=4.7 && <5
+    , bytestring
     , containers
+    , directory
     , fsnotify
     , hashable
     , text
@@ -49,9 +53,12 @@ executable butch-exe
       app
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      aeson
+    , base >=4.7 && <5
     , butch
+    , bytestring
     , containers
+    , directory
     , fsnotify
     , hashable
     , text
@@ -66,9 +73,12 @@ test-suite butch-test
       test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      aeson
+    , base >=4.7 && <5
     , butch
+    , bytestring
     , containers
+    , directory
     , fsnotify
     , hashable
     , text
