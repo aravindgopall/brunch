@@ -2,6 +2,7 @@ module Lib
   ( someFunc
   , watchAnd
   , buildMap
+  , readPreviousMapper
   ) where
 
 import Control.Concurrent (threadDelay)

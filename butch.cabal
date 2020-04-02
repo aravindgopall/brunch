@@ -4,16 +4,16 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: f0752b24716482885f2ea9c16bedbd881135483419ca7765d868464c12a364f9
+-- hash: eb8802108f132b063d9bfb8fac88a89a5ba7806204841aefc111c3e1507e3c40
 
 name:           butch
 version:        0.1.0.0
 description:    Please see the README on GitHub at <https://github.com/githubuser/butch#readme>
-homepage:       https://github.com/githubuser/butch#readme
-bug-reports:    https://github.com/githubuser/butch/issues
-author:         Author name here
-maintainer:     example@example.com
-copyright:      2020 Author name here
+homepage:       https://github.com/aravindgopall/butch#readme
+bug-reports:    https://github.com/aravindgopall/butch/issues
+author:         Aravind Gopal Mallapureddy
+maintainer:     aravindgopal.ag@gmail.com
+copyright:      2020 Aravind Gopal Mallapureddy
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
@@ -23,7 +23,7 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/butch
+  location: https://github.com/aravindgopall/butch
 
 library
   exposed-modules:
