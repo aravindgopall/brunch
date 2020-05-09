@@ -1,22 +1,26 @@
 module Mapper where
 
-import Data.Aeson
-import qualified Data.ByteString.Lazy as BS
-import Data.Hashable
-import Data.List hiding (insert)
-import Data.Map hiding (filter, foldl, intercalate, map, split)
-import qualified Data.Text as T
-import Extra
-import System.Directory
+import           Data.Aeson
+import qualified Data.ByteString      as BS
+import qualified Data.ByteString.Lazy as BSL
+import           Data.Hashable
+import           Data.List            hiding (insert)
+import           Data.Map             hiding (filter, foldl, intercalate, map,
+                                       split)
+import qualified Data.Text            as T
+import           Extra
+import           System.Directory
 
 readPreviousMapper :: FilePath -> IO (Map String Int)
 readPreviousMapper cF = do
-  let fileName = T.unpack $ last $ T.splitOn (T.pack "/") (T.pack cF)
+  let fileName =
+        T.unpack $
+        T.replace (T.pack ".purs") (T.pack ".json") $ last $ T.splitOn (T.pack "/") (T.pack cF)
   cwd <- getCurrentDirectory
   ifM
-    (doesFileExist (cwd <> "./bunch/" <> fileName))
+    (doesFileExist (cwd <> "/bunch-output/" <> fileName))
     ((either (const $ fail "wrong format found") pure . eitherDecode) =<<
-     BS.readFile (cwd <> "/.bunch/" <> fileName))
+     (BSL.fromStrict <$> BS.readFile (cwd <> "/bunch-output/" <> fileName)))
     (pure empty)
 
 buildMap :: FilePath -> IO (Map String Int)

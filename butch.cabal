@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: eb8802108f132b063d9bfb8fac88a89a5ba7806204841aefc111c3e1507e3c40
+-- hash: 17463fef809cbf825b793ec7f24b9d9570be9853621f2a7f7ee537006018a2a1
 
 name:           butch
 version:        0.1.0.0
@@ -51,7 +51,6 @@ executable butch-exe
       Paths_butch
   hs-source-dirs:
       app
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       aeson
     , base >=4.7 && <5
